@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Home page</title>
+
+  <script src="https://kit.fontawesome.com/47101d2035.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <style>
+    .center {
+      position: absolute;
+      text-align: center;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: rgb(230, 239, 245);
+    }
+  </style>
+</head>
+
+
+<body class="center">
+
+  <h1 style="color:rgb(44, 44, 90); font-weight: 700;">
+    <i class="fas fa-ship"></i> Titanic Survival Predictor
+  </h1>
+
+  <p style="color:rgb(51, 51, 83); font-weight: 700;">
+    Can a passenger with your given characteristics survive?
+  </p>
+
+  <form action="result">
+    {% csrf_token %}
+
+    <div class="form-group">
+      <input class="form-control" placeholder="Passenger Class (1, 2 or 3)" required type="text" name="pclass">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" placeholder="Sex (0 for Male, 1 for Female)" required type="text" name="sex">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" placeholder="Age" required type="text" name="age">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" placeholder="No. of Sibling(s) or Spouse(s)" required type="text" name="sibsp">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" placeholder="Parch" type="text" required name="parch">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" placeholder="Ticket Fare" required type="text" name="fare">
+    </div>
+
+    <div class="form-group">
+      <input class="form-control" placeholder="Embark C (1 if applies)" required type="text" name="embC">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" placeholder="Embark Q (1 if applies)" required type="text" name="embQ">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" placeholder="Embark S (1 if applies)" required type="text" name="embS">
+    </div>
+
+
+    <input class="btn btn-primary btn-lg btn-block" type="submit" value='Predict'>
+
+  </form>
+</body>
+
+</html>
